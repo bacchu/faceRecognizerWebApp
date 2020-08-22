@@ -34,9 +34,9 @@ def uploaded_file():
             return redirect(request.url)
         if f and allowed_file(f.filename):
             filename = secure_filename(f.filename)
-            f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            #f.save('/Users/triv/images/uploads/' + secure_filename(f.filename))
-            image_file = filename
+            #f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            f.save('/Users/triv/images/uploads/' + secure_filename(f.filename))
+            image_file = '/Users/triv/images/uploads/' + secure_filename(f.filename)
             json_image_data = face_analyzer.get_data(image_file)
             return render_template('uploaded.html',result=json_image_data)
 
