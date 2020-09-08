@@ -12,7 +12,7 @@ args = vars(ap.parse_args())
 
 image_paths = list(paths.list_images(args["dataset"]))
 
-file = open('face_existence_data.txt', 'w')
+file = open('face_existence_report.txt', 'w')
 
 for (i, image_path) in enumerate(image_paths):
     print("[INFO] processing image {}/{}".format(i + 1,
