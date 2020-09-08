@@ -2,9 +2,10 @@ import argparse
 from imutils import paths
 import facevector_generator
 
-
+# Construct the argument parser
 ap = argparse.ArgumentParser()
 
+# Add the arguments to the parser
 ap.add_argument("-i", "--dataset", required=True,
                 help="path to input directory of images")
 
@@ -12,6 +13,7 @@ args = vars(ap.parse_args())
 
 image_paths = list(paths.list_images(args["dataset"]))
 
+# Create an output file to store the results of the face recognition
 file = open('face_existence_report.txt', 'w')
 
 for (i, image_path) in enumerate(image_paths):
